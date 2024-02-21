@@ -1,7 +1,9 @@
 body {
 	max-width: 1920px;
+	width: 100%;
 	margin: auto;
 }
+
 * {
 	font-family: 'Inter';
 	font-style: normal;
@@ -17,31 +19,25 @@ body {
 	padding-block: 30px;
 	align-items: center;
 }
-
 .top-header .name {
 	font-size: 26px;
 }
-
 .nav ul {
 	display: flex;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 16px;
 	margin-bottom: 0;
 }
-
 .nav li {
 	padding-inline: 10px;
 }
-
 .nav a {
 	text-decoration: none;
 	color: #000
 }
-
 .social-link img {
 	width: 20px;
 }
-
 #about {
 	display: flex;
 	background-color: #F6D2B8;
@@ -49,7 +45,6 @@ body {
 	padding-block: 100px;
 	position: relative;
 }
-
 .picture.left::before {
 	content: ' ';
 	background-color: #E5975F;
@@ -60,7 +55,6 @@ body {
 	left: 0;
 	z-index: -1;
 }
-
 .picture {
 	flex: 1;
 	margin: 0 20px;
@@ -82,6 +76,7 @@ body {
 .about-me__introduction {
 	font-family: 'Spectral';
 	font-weight: 800;
+	font-size: 16px;
 	font-style: italic;
 	width: 60%;
 }
@@ -89,7 +84,6 @@ body {
 	width: 80%;
 	font-size: 14px;
 }
-
 #gallery {
 	/*	min-height: 100vh; */
 }
@@ -103,6 +97,7 @@ body {
 .nav-pills .active-tag  {
 	color: #fff;
 	background-color: #BEB45A;
+	font-size: 16px;
 	border-radius:0;
 }
  .nav-link {
@@ -111,8 +106,6 @@ body {
 .nav-pills .nav-link:hover{
 	cursor: pointer;
 }
-
-
 .item-column {
 	position: relative;
 	margin-bottom: 0 !important;
@@ -140,7 +133,6 @@ body {
 	display: flex;
 	font-size: 24px;
 }
-
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
@@ -152,6 +144,7 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
+	font-size: 40px;
 
 }
 .quote__author {
@@ -175,14 +168,12 @@ body {
 	left: 0;
 	z-index: 0;
 }
-
 #services .container {
 	justify-content: space-between;
 	display: flex;
 	padding : 2em 0;
 
 }
-
 .service {
 	background-color: white;
 	max-width: 390px;
@@ -194,7 +185,6 @@ body {
 	justify-content: space-between;
 	z-index: 1;
 }
-
 #contact {
 	margin: auto;
 	background-color: #D8D3A8 ;
@@ -226,7 +216,6 @@ form {
 	width: 70%;
 	align-items: flex-start;
 }
-
 form input {
 	width: 100%;
 	background-color: transparent;
@@ -234,7 +223,6 @@ form input {
 	height: 2.5em;
 	margin-bottom: 20px;
 }
-
 form textarea {
 	width: 100%;
 	background-color: transparent;
