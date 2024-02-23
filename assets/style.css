@@ -25,7 +25,7 @@ body {
 .nav ul {
 	display: flex;
 	list-style-type: none;
-	font-size: 16px;
+	font-size: 14px;
 	margin-bottom: 0;
 }
 .nav li {
@@ -37,6 +37,7 @@ body {
 }
 .social-link img {
 	width: 20px;
+	height: 20px;
 }
 #about {
 	display: flex;
@@ -97,7 +98,7 @@ body {
 .nav-pills .active-tag  {
 	color: #fff;
 	background-color: #BEB45A;
-	font-size: 16px;
+	font-size: 18px;
 	border-radius:0;
 }
  .nav-link {
@@ -343,7 +344,7 @@ input[type="submit"] {
 		width: 100%;
 	}
 	.picture {
-		width: 80%;
+		width: 50%;
 	}
 }
 
