@@ -5,9 +5,16 @@ body {
 }
 
 * {
-	font-family: 'Inter';
 	font-style: normal;
 }
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+	line-height: 1.2;
+	font-size: 30px;
+  }
 .top-header {
 	background-color: white;
 	position: sticky;
@@ -25,7 +32,7 @@ body {
 .nav ul {
 	display: flex;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 16px;
 	margin-bottom: 0;
 }
 .nav li {
@@ -95,17 +102,19 @@ body {
 .gallery .nav {
 	justify-content: center;
 }
-.nav-pills .active-tag  {
-	color: #fff;
+.nav-pills .active-tag {
+	color: black;
 	background-color: #BEB45A;
 	font-size: 18px;
 	border-radius:0;
 }
- .nav-link {
+
+.nav-link {
 	color: #000;
 }
 .nav-pills .nav-link:hover{
 	cursor: pointer;
+	color:#000;
 }
 .item-column {
 	position: relative;
