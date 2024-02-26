@@ -331,7 +331,6 @@
    * Constants
    * ------------------------------------------------------------------------
    */
-
   const namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   const stripNameRegex = /\..*/;
   const stripUidRegex = /::\d+$/;
@@ -6023,7 +6022,6 @@
    * Constants
    * ------------------------------------------------------------------------
    */
-
   const NAME$3 = 'popover';
   const DATA_KEY$3 = 'bs.popover';
   const EVENT_KEY$3 = `.${DATA_KEY$3}`;
@@ -6057,7 +6055,6 @@
    * Class Definition
    * ------------------------------------------------------------------------
    */
-
   class Popover extends Tooltip {
     // Getters
     static get Default() {
@@ -6076,7 +6073,6 @@
       return DefaultType$2;
     } // Overrides
 
-
     isWithContent() {
       return this.getTitle() || this._getContent();
     }
@@ -6087,7 +6083,6 @@
       this._sanitizeAndSetContent(tip, this._getContent(), SELECTOR_CONTENT);
     } // Private
 
-
     _getContent() {
       return this._resolvePossibleFunction(this._config.content);
     }
@@ -6095,7 +6090,6 @@
     _getBasicClassPrefix() {
       return CLASS_PREFIX;
     } // Static
-
 
     static jQueryInterface(config) {
       return this.each(function () {
@@ -6118,8 +6112,6 @@
    * ------------------------------------------------------------------------
    * add .Popover to jQuery only if jQuery is present
    */
-
-
   defineJQueryPlugin(Popover);
 
   /**
@@ -6168,7 +6160,6 @@
    * Class Definition
    * ------------------------------------------------------------------------
    */
-
   class ScrollSpy extends BaseComponent {
     constructor(element, config) {
       super(element);
@@ -6184,7 +6175,6 @@
       this._process();
     } // Getters
 
-
     static get Default() {
       return Default$1;
     }
@@ -6192,7 +6182,6 @@
     static get NAME() {
       return NAME$2;
     } // Public
-
 
     refresh() {
       const autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
@@ -6226,7 +6215,6 @@
       EventHandler.off(this._scrollElement, EVENT_KEY$2);
       super.dispose();
     } // Private
-
 
     _getConfig(config) {
       config = { ...Default$1,
@@ -6320,7 +6308,6 @@
       SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
     } // Static
 
-
     static jQueryInterface(config) {
       return this.each(function () {
         const data = ScrollSpy.getOrCreateInstance(this, config);
@@ -6336,14 +6323,12 @@
         data[config]();
       });
     }
-
   }
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
     SelectorEngine.find(SELECTOR_DATA_SPY).forEach(spy => new ScrollSpy(spy));
@@ -6356,7 +6341,6 @@
    */
 
   defineJQueryPlugin(ScrollSpy);
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v5.1.3): tab.js
@@ -6368,7 +6352,6 @@
    * Constants
    * ------------------------------------------------------------------------
    */
-
   const NAME$1 = 'tab';
   const DATA_KEY$1 = 'bs.tab';
   const EVENT_KEY$1 = `.${DATA_KEY$1}`;
@@ -6394,13 +6377,11 @@
    * Class Definition
    * ------------------------------------------------------------------------
    */
-
   class Tab extends BaseComponent {
     // Getters
     static get NAME() {
       return NAME$1;
     } // Public
-
 
     show() {
       if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && this._element.classList.contains(CLASS_NAME_ACTIVE)) {
@@ -6446,7 +6427,6 @@
         complete();
       }
     } // Private
-
 
     _activate(element, container, callback) {
       const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelectorEngine.find(SELECTOR_ACTIVE_UL, container) : SelectorEngine.children(container, SELECTOR_ACTIVE);
@@ -6511,7 +6491,6 @@
       }
     } // Static
 
-
     static jQueryInterface(config) {
       return this.each(function () {
         const data = Tab.getOrCreateInstance(this);
@@ -6532,7 +6511,6 @@
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
     if (['A', 'AREA'].includes(this.tagName)) {
@@ -6598,7 +6576,6 @@
    * Class Definition
    * ------------------------------------------------------------------------
    */
-
   class Toast extends BaseComponent {
     constructor(element, config) {
       super(element);
@@ -6609,7 +6586,6 @@
 
       this._setListeners();
     } // Getters
-
 
     static get DefaultType() {
       return DefaultType;
@@ -6622,7 +6598,6 @@
     static get NAME() {
       return NAME;
     } // Public
-
 
     show() {
       const showEvent = EventHandler.trigger(this._element, EVENT_SHOW);
@@ -6694,7 +6669,6 @@
       super.dispose();
     } // Private
 
-
     _getConfig(config) {
       config = { ...Default,
         ...Manipulator.getDataAttributes(this._element),
@@ -6717,7 +6691,6 @@
         this.hide();
       }, this._config.delay);
     }
-
     _onInteraction(event, isInteracting) {
       switch (event.type) {
         case 'mouseover':
@@ -6730,34 +6703,28 @@
           this._hasKeyboardInteraction = isInteracting;
           break;
       }
-
       if (isInteracting) {
         this._clearTimeout();
 
         return;
       }
-
       const nextElement = event.relatedTarget;
 
       if (this._element === nextElement || this._element.contains(nextElement)) {
         return;
       }
-
       this._maybeScheduleHide();
     }
-
     _setListeners() {
       EventHandler.on(this._element, EVENT_MOUSEOVER, event => this._onInteraction(event, true));
       EventHandler.on(this._element, EVENT_MOUSEOUT, event => this._onInteraction(event, false));
       EventHandler.on(this._element, EVENT_FOCUSIN, event => this._onInteraction(event, true));
       EventHandler.on(this._element, EVENT_FOCUSOUT, event => this._onInteraction(event, false));
     }
-
     _clearTimeout() {
       clearTimeout(this._timeout);
       this._timeout = null;
     } // Static
-
 
     static jQueryInterface(config) {
       return this.each(function () {
@@ -6774,7 +6741,6 @@
     }
 
   }
-
   enableDismissTrigger(Toast);
   /**
    * ------------------------------------------------------------------------
@@ -6784,7 +6750,6 @@
    */
 
   defineJQueryPlugin(Toast);
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v5.1.3): index.umd.js
@@ -6805,8 +6770,6 @@
     Toast,
     Tooltip
   };
-
   return index_umd;
-
 }));
 //# sourceMappingURL=bootstrap.bundle.js.map
